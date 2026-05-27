@@ -18,6 +18,7 @@ A beginner-friendly command-line calculator built in Python to perform basic ari
 
 ```bash
 python ci-calculator.py
+python -m unittest basics/ci-calculator/calculator.tests.py
 ```
 
 > 💡 Make sure Python is installed on your machine. Works in any terminal or IDE.
