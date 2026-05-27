@@ -17,6 +17,9 @@ def divide (a, b):
 
 
 print("🧮 Welcome to CLI Calculator 🧮")
+
+firstOp = False
+calculatedValue = 0
 while True:
     print("\nSelect operation:")
     print("1. Add")
@@ -32,18 +35,29 @@ while True:
         break
 
     try:
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
+        if(firstOp == False):
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        else:
+            num1 = float(calculatedValue)
+            num2 = float(input("Enter a number: "))
+
     except ValueError:
         print("❌ Invalid input. Please enter numbers only.")
         continue
 
+    firstOp = True
     match choice:
         case '1':
-            print("✅ Result:", add(num1, num2))
+            calculatedValue = add(num1, num2)
+            print(num1, '+', num2, '=', calculatedValue)
         case '2':
-            print("✅ Result:", subtract(num1, num2))
+            calculatedValue = subtract(num1, num2)
+            print(num1, '-', num2, '=', calculatedValue)
         case '3':
-            print("✅ Result:", multiply(num1, num2))
+            calculatedValue = multiply(num1, num2)
+            print(num1, 'x', num2, '=', calculatedValue)
         case '4':
-            print("✅ Result:", divide(num1, num2))
+            calculatedValue = divide(num1, num2)
+            print(num1, '/', num2, '=', calculatedValue)
+
