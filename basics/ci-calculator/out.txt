@@ -1,0 +1,5 @@
+🧮 Welcome to CLI Calculator 🧮
+10.0 - 6.0 = 4.0
+4.0 + 3.0 = 7.0
+7.0 / 10.0 = 0.7
+👋 Exiting calculator. Have a great day!

@@ -28,7 +28,7 @@ production-oriented services and infrastructure using modern backend patterns.
 python-playground/
 │
 ├── basics/
-│   └── calculator/
+│   └── cli-calculator/
 │
 ├── fastapi/
 │

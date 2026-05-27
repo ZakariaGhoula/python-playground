@@ -1,4 +1,6 @@
-# calculator.py
+# ci-calculator.py
+from pydoc import ttypager
+
 
 def add(a, b):
     return a + b
@@ -15,11 +17,22 @@ def divide (a, b):
     except ZeroDivisionError:
         print("You cannot divide by zero")
 
+def logger(input, fromScratch = False):
+    print(input)
+    if fromScratch:
+        mode="w"
+    else:
+        mode="a"
+    with open('out.txt', mode) as f:
+        f.write(input+"\n")
+        f.close()
 
-print("🧮 Welcome to CLI Calculator 🧮")
 
 firstOp = False
 calculatedValue = 0
+greeting = "🧮 Welcome to CLI Calculator 🧮"
+
+logger(greeting, True)
 while True:
     print("\nSelect operation:")
     print("1. Add")
@@ -31,7 +44,7 @@ while True:
     choice = input("Enter choice (1/2/3/4/5): ")
 
     if choice == '5':
-        print("👋 Exiting calculator. Have a great day!")
+        logger("👋 Exiting ci-calculator. Have a great day!")
         break
 
     try:
@@ -50,14 +63,13 @@ while True:
     match choice:
         case '1':
             calculatedValue = add(num1, num2)
-            print(num1, '+', num2, '=', calculatedValue)
+            logger(str(num1)+ " + " + str(num2)+ ' = ' + str(calculatedValue))
         case '2':
             calculatedValue = subtract(num1, num2)
-            print(num1, '-', num2, '=', calculatedValue)
+            logger(str(num1)+ " - " + str(num2)+ ' = ' + str(calculatedValue))
         case '3':
             calculatedValue = multiply(num1, num2)
-            print(num1, 'x', num2, '=', calculatedValue)
+            logger(str(num1)+ " x " + str(num2)+ ' = ' + str(calculatedValue))
         case '4':
             calculatedValue = divide(num1, num2)
-            print(num1, '/', num2, '=', calculatedValue)
-
+            logger(str(num1)+ " / " + str(num2)+ ' = ' + str(calculatedValue))
