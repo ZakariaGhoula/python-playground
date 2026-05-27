@@ -1,7 +1,8 @@
+numbers = input("Give me n numbers: ").split()
 
-x, y = input("Give me 2 numbers: ").split()
-x = int(x)
-y = int(y)
-print("Numbers entered: ", x)
-print("Numbers entered: ", y);
+for num in numbers:
+    print("The number is:", num)
 
+
+for i, v in enumerate(numbers):
+    print("The number #",i+1, "is:", v)
