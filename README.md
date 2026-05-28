@@ -29,6 +29,7 @@ python-playground/
 │
 ├── basics/
 │   └── cli-calculator/
+│   └── cli-file-organizer/
 │
 ├── fastapi/
 │
