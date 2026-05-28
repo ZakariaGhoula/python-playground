@@ -1,4 +1,4 @@
-# ci-file-organizer.py
+# ci-file_organizer.py
 import os
 import shutil
 
